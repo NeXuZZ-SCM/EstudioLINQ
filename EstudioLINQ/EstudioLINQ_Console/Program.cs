@@ -20,16 +20,42 @@ namespace EstudioLINQ_Console
             precios.Add(19);
             precios.Add(3);
 
+            List<int> cantidad = new List<int>();
+            cantidad.Add(22);
+            cantidad.Add(33);
+            cantidad.Add(44);
+            cantidad.Add(55);
+            cantidad.Add(66);
+
+            List<string> productos = new List<string>();
+            productos.Add("jugo");
+            productos.Add("gaseosa");
+            productos.Add("agua");
+            productos.Add("snack");
+            productos.Add("tomate");
+            productos.Add("shampoo");
+            productos.Add("pan");
+
 
             PreciosMenorA(precios);
             ListarPrecio(precios);
             SumarPrecio(precios);
             QuitarElementos(precios);
+            UnirPrecioACantidad(precios, cantidad);
 
+            
 
             //precios.ToList()
             //precios.
             Console.ReadKey();
+        }
+
+        private static void UnirPrecioACantidad(List<int> precios, List<int> cantidad)
+        {
+            foreach (var item in precios.Union(cantidad))
+            {
+                Console.WriteLine(item);
+            }
         }
 
         private static void QuitarElementos(List<int> precios)
