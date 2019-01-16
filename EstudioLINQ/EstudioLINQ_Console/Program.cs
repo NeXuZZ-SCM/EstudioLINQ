@@ -23,11 +23,28 @@ namespace EstudioLINQ_Console
 
             PreciosMenorA(precios);
             ListarPrecio(precios);
+            SumarPrecio(precios);
+            QuitarElementos(precios);
 
 
             //precios.ToList()
             //precios.
             Console.ReadKey();
+        }
+
+        private static void QuitarElementos(List<int> precios)
+        {
+            foreach (var item in precios.Skip(3))
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("fin SKIP precios | Elimina una cantidad de elementos especificados");
+        }
+
+        private static void SumarPrecio(List<int> precios)
+        {
+            Console.WriteLine(precios.Sum(precio => precio));
+            Console.WriteLine("fin SUM precios");
         }
 
         private static void ListarPrecio(List<int> precios)
@@ -45,7 +62,7 @@ namespace EstudioLINQ_Console
             {
                 Console.WriteLine(item);
             }
-            Console.WriteLine("fin foreach WHERE");
+            Console.WriteLine("fin foreach WHERE x=> x < 20");
         }
     }
 }
